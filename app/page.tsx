@@ -1,8 +1,9 @@
 import Header from './components/Header'
 import Hero from './components/Hero'
+import ServiceCards from './components/ServiceCards'
+import AnimationOverlay from './components/AnimationOverlay'
 import Features from './components/Features'
 import Footer from './components/Footer'
-import AnimationOverlay from './components/AnimationOverlay'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <main>
         <Hero />
         <AnimationOverlay />
+        <ServiceCards />
         <Features />
       </main>
       <Footer />
