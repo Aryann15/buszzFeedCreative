@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import ServiceCards from './components/ServiceCards'
 import AnimationOverlay from './components/AnimationOverlay'
 import LatestWork from './components/LatestWork'
+import LearningSection from './components/LearningSection'
 import Features from './components/Features'
 import Footer from './components/Footer'
 
@@ -15,6 +16,7 @@ export default function Home() {
         <AnimationOverlay />
         <ServiceCards />
         <LatestWork />
+        <LearningSection />
         <Features />
       </main>
       <Footer />
