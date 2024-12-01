@@ -1,62 +1,90 @@
-'use client'
-
-import { Card } from "@/components/ui/card"
-import { Lightbulb, Rocket, Brain } from 'lucide-react'
-import { motion } from "framer-motion"
+"use client";
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { Lightbulb, Rocket, Brain } from "lucide-react";
 
 interface ServiceCardProps {
-  title: string
-  icon: React.ReactNode
-  team: string[]
-  details: string[]
-  ctaText: string
-  gradient: string
+  title: string;
+  icon: React.ReactNode;
+  team: string[];
+  details: string[];
+  ctaText: string;
+  gradient: string;
 }
 
 function ServiceCard({ title, icon, team, details, ctaText, gradient }: ServiceCardProps) {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleMouseEnter = () => {
+    console.log(`Mouse entered card: ${title}`);
+    setIsFlipped(true);
+  };
+
+  const handleMouseLeave = () => {
+    console.log(`Mouse left card: ${title}`);
+    setIsFlipped(false);
+  };
+
+  console.log(`Card "${title}" isFlipped state:`, isFlipped);
+
   return (
-    <motion.div
-      className="relative h-[400px] perspective-1000"
-      whileHover={{ rotateX: 10, rotateY: 10, scale: 1.05 }}
-      transition={{ type: "spring", stiffness: 300, damping: 20 }}
+    <div
+      className="relative h-[400px] w-full perspective-1000"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
-      <Card className={`w-full h-full ${gradient} rounded-xl p-6 text-white group hover:shadow-2xl transition-all duration-500 overflow-hidden`}>
-        <div className="relative h-full">
-          {/* Front content */}
-          <div className="space-y-4 transition-opacity duration-500 group-hover:opacity-0">
+      <div
+        className={`relative h-full w-full transition-transform duration-700 transform ${
+          isFlipped ? "rotate-y-180" : ""
+        }`}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Front Side */}
+        <div
+          className={`absolute inset-0 ${gradient} rounded-xl p-6 text-white flex flex-col justify-between`}
+          style={{ backfaceVisibility: "hidden" }}
+        >
+          <div className="space-y-4">
             <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
               {icon}
             </div>
             <h3 className="text-2xl font-bold">{title}</h3>
             <div className="space-y-2">
               {team.map((member, index) => (
-                <p key={index} className="text-white/80">+ {member}</p>
+                <p key={index} className="text-white/80">
+                  + {member}
+                </p>
               ))}
             </div>
           </div>
+        </div>
 
-          {/* Back content */}
-          <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold">{title}</h3>
-              <div className="space-y-2">
-                {details.map((detail, index) => (
-                  <p key={index} className="text-white/90 border-b border-white/20 py-2">
-                    {detail}
-                  </p>
-                ))}
-              </div>
+        {/* Back Side */}
+        <div
+          className="absolute inset-0 bg-gray-100 rounded-xl p-6 text-gray-800 flex flex-col justify-between"
+          style={{
+            backfaceVisibility: "hidden",
+            transform: "rotateY(180deg)",
+          }}
+        >
+          <div className="space-y-4">
+            <h3 className="text-2xl font-bold">{title}</h3>
+            <div className="space-y-2">
+              {details.map((detail, index) => (
+                <p key={index} className="text-gray-700 border-b border-gray-300 py-2">
+                  {detail}
+                </p>
+              ))}
             </div>
           </div>
-
-          {/* CTA Button - Always visible */}
-          <button className="absolute bottom-0 left-0 right-0 bg-white/20 py-3 text-center hover:bg-white/30 transition-colors rounded-md">
-            {ctaText}
-          </button>
         </div>
-      </Card>
-    </motion.div>
-  )
+      </div>
+      {/* CTA Button */}
+      <button className="absolute bottom-4 left-0 right-0 bg-white/20 py-3 text-center hover:bg-white/30 transition-colors rounded-md">
+        {ctaText}
+      </button>
+    </div>
+  );
 }
 
 export default function ServiceCards() {
@@ -69,10 +97,10 @@ export default function ServiceCards() {
         "Market Research",
         "Business Strategy",
         "Digital Transformation",
-        "Technology Consulting"
+        "Technology Consulting",
       ],
       ctaText: "View Insights & Consulting Work",
-      gradient: "bg-gradient-to-br from-blue-600 to-blue-800"
+      gradient: "bg-gradient-to-br from-blue-600 to-blue-800",
     },
     {
       title: "Product",
@@ -84,10 +112,10 @@ export default function ServiceCards() {
         "User Testing & Validation",
         "System Architecture",
         "Full-Stack Engineering",
-        "Product Management"
+        "Product Management",
       ],
       ctaText: "View Case Studies",
-      gradient: "bg-gradient-to-br from-blue-400 to-blue-600"
+      gradient: "bg-gradient-to-br from-blue-400 to-blue-600",
     },
     {
       title: "Marketing",
@@ -97,13 +125,12 @@ export default function ServiceCards() {
         "Growth Strategy",
         "Content Marketing",
         "Social Media",
-        "Digital Advertising"
+        "Digital Advertising",
       ],
       ctaText: "View Marketing Work",
-      gradient: "bg-gradient-to-br from-blue-600 to-blue-800"
-    }
-  ]
-
+      gradient: "bg-gradient-to-br from-blue-600 to-blue-800",
+    },
+  ];
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
@@ -118,6 +145,5 @@ export default function ServiceCards() {
         </p>
       </div>
     </section>
-  )
+  );
 }
-

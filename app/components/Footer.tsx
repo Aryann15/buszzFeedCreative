@@ -1,5 +1,4 @@
 'use client'
-
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -15,9 +14,9 @@ export default function Footer() {
     <footer className="bg-[#1a1b26] text-white">
       {/* Testimonial Section */}
       <div className="container mx-auto px-4 py-20 text-center max-w-4xl">
-        <p className="text-gray-400 mb-4">Dan Fisher, principal</p>
+        <p className="text-gray-400 mb-4">Aditya Chauhan, principal</p>
         <blockquote className="text-2xl md:text-3xl italic font-light mb-8">
-          "Gitwit is a serial innovator; we have applied our team and process with repeated success regardless of industry, size, problem, or point of entry."
+          "buzzfeedCreative is a serial innovator; we have applied our team and process with repeated success regardless of industry, size, problem, or point of entry."
         </blockquote>
         <Link
           href="/contact"
@@ -78,14 +77,14 @@ export default function Footer() {
 
         {/* Address */}
         <div className="lg:text-right">
-          <p className="text-gray-400">301 E Archer St · Tulsa OK 74120</p>
+          <p className="text-gray-400">Jahangirputi</p>
         </div>
       </div>
 
       {/* Bottom Footer */}
       <div className="container mx-auto px-4 py-8 border-t border-gray-800">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400">© 2024, Gitwit. All Rights Reserved.</p>
+          <p className="text-gray-400">© 2024, Aryan. All Rights Reserved.</p>
           
           {/* Social Links */}
           <div className="flex space-x-6">
@@ -116,13 +115,7 @@ export default function Footer() {
       {/* Logo */}
       <div className="container mx-auto px-4 py-12">
         <div className="w-48 md:w-64 mx-auto">
-          <Image
-            src="/placeholder.svg?height=80&width=240"
-            alt="Gitwit"
-            width={240}
-            height={80}
-            className="w-full"
-          />
+          <div className="text-4xl md:text-6xl font-bold text-blue-600">buzzfeed CREATIONS</div>
         </div>
       </div>
     </footer>
