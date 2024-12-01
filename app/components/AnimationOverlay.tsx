@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useRef } from 'react'
-
+import Image from 'next/image'
 const shapes = [
   { type: 'circle', size: 20, color: 'bg-blue-500' },
   { type: 'square', size: 25, color: 'bg-green-500' },
