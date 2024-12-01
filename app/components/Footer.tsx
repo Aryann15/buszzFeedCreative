@@ -7,12 +7,10 @@ import { Facebook, Instagram, Linkedin, Youtube, InstagramIcon as TiktokIcon } f
 export default function Footer() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    // Handle newsletter signup
   }
 
   return (
     <footer className="bg-[#1a1b26] text-white">
-      {/* Testimonial Section */}
       <div className="container mx-auto px-4 py-20 text-center max-w-4xl">
         <p className="text-gray-400 mb-4">Aditya Chauhan, principal</p>
         <blockquote className="text-2xl md:text-3xl italic font-light mb-8">
@@ -27,9 +25,7 @@ export default function Footer() {
         </Link>
       </div>
 
-      {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-        {/* Newsletter Signup */}
         <div className="lg:col-span-1">
           <div className="bg-blue-600 w-12 h-12 flex items-center justify-center rounded-lg mb-4">
             G
@@ -52,7 +48,6 @@ export default function Footer() {
           </form>
         </div>
 
-        {/* Navigation Links */}
         <div>
           <h3 className="text-lg font-semibold mb-4">Company</h3>
           <ul className="space-y-2">
@@ -75,18 +70,15 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Address */}
         <div className="lg:text-right">
           <p className="text-gray-400">Jahangirputi</p>
         </div>
       </div>
 
-      {/* Bottom Footer */}
       <div className="container mx-auto px-4 py-8 border-t border-gray-800">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-gray-400">© 2024, Aryan. All Rights Reserved.</p>
           
-          {/* Social Links */}
           <div className="flex space-x-6">
             <Link href="https://linkedin.com" className="text-gray-400 hover:text-white">
               <span className="sr-only">LinkedIn</span>
@@ -112,7 +104,6 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Logo */}
       <div className="container mx-auto px-4 py-12">
         <div className="w-48 md:w-64 mx-auto">
           <div className="text-4xl md:text-6xl font-bold text-blue-600">buzzfeed CREATIONS</div>

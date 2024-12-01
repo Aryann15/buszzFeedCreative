@@ -39,7 +39,6 @@ function ServiceCard({ title, icon, team, details, ctaText, gradient }: ServiceC
         }`}
         style={{ transformStyle: "preserve-3d" }}
       >
-        {/* Front Side */}
         <div
           className={`absolute inset-0 ${gradient} rounded-xl p-6 text-white flex flex-col justify-between`}
           style={{ backfaceVisibility: "hidden" }}
@@ -59,7 +58,6 @@ function ServiceCard({ title, icon, team, details, ctaText, gradient }: ServiceC
           </div>
         </div>
 
-        {/* Back Side */}
         <div
           className="absolute inset-0 bg-gray-100 rounded-xl p-6 text-gray-800 flex flex-col justify-between"
           style={{
@@ -79,7 +77,6 @@ function ServiceCard({ title, icon, team, details, ctaText, gradient }: ServiceC
           </div>
         </div>
       </div>
-      {/* CTA Button */}
       <button className="absolute bottom-4 left-0 right-0 bg-white/20 py-3 text-center hover:bg-white/30 transition-colors rounded-md">
         {ctaText}
       </button>
