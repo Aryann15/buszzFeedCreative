@@ -21,41 +21,16 @@ export default function Hero() {
       </div>
       
       {/* Navigation */}
-      <nav className="relative z-10 flex items-center justify-between p-6">
-        <div className="flex items-center space-x-2">
-          <div className="h-8 w-8 rounded-lg bg-white/10 backdrop-blur-sm" />
-          <span className="text-lg font-semibold text-white font-poppins">Untitled UI</span>
-        </div>
-        
-        <div className="hidden md:flex items-center space-x-6">
-          {['Home', 'Products', 'Resources', 'Pricing'].map((item) => (
-            <Link key={item} className="text-sm text-white/90 hover:text-white transition-colors" href="#">
-              {item}
-            </Link>
-          ))}
-        </div>
-        
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" className="text-white hover:bg-white/10 transition-colors">
-            Log in
-          </Button>
-          <Button className="bg-white text-blue-600 hover:bg-blue-50 transition-colors">
-            Sign up
-          </Button>
-        </div>
-      </nav>
       
       {/* Hero Content */}
-      <main className="relative z-10 px-6 pt-20 pb-16 md:pt-32 md:pb-24">
+      <main className="relative z-10 top-20 mt-20 px-6 pt-20 pb-16 md:pt-32 md:pb-24">
         <div className="mx-auto max-w-4xl">
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6 font-poppins">
-            How to improve your UI design skills: Quickly develop an "eye" for great design
-          </h1>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, placeat!          </h1>
           <p className="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl">
-            The design industry is constantly evolving, but good design is timeless. Learn how to quickly develop an "eye" for UI design and improve your design skills in 2023.
-          </p>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, veritatis.          </p>
           <div className="flex flex-wrap gap-3">
-            {['Design', 'Product', '12 min read'].map((tag) => (
+            {['lorem','ipsum','dorem'].map((tag) => (
               <span key={tag} className="px-4 py-1.5 rounded-full bg-blue-400/10 backdrop-blur-sm text-sm text-white font-medium transition-colors hover:bg-blue-400/20">
                 {tag}
               </span>
